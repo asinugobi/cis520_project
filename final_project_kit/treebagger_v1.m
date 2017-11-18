@@ -14,7 +14,7 @@ sparse_x(sparse_x > 1) = 1;
 
 %% Train the tree model.
 % Train across an ensemble of 50 trees.
-tree_model = TreeBagger(100, sparse_x, Y_train, 'OOBPrediction', 'On', 'Method', 'classification'); 
+tree_model = TreeBagger(50, sparse_x, Y_train, 'OOBPrediction', 'On', 'Method', 'classification'); 
 
 % Compute the predicted labels from training data. 
 Y_fit = predict(tree_model, sparse_x); 
