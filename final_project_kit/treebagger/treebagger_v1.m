@@ -3,7 +3,7 @@ clear
 clc 
 
 % Load data 
-load('train.mat')
+load('../main/train.mat')
 [n, m] = size(X_train_bag); 
 
 
@@ -11,6 +11,9 @@ load('train.mat')
 % Convert X_train_bag into feature matrix (sparse x)
 sparse_x = full(X_train_bag); 
 sparse_x(sparse_x > 1) = 1;
+
+% freq = sum(sparse_x); 
+% length(sparse_x(freq >=10 & freq <= 750))
 
 %% Train the tree model.
 % Train across an ensemble of 50 trees.

@@ -1,7 +1,7 @@
 function [Y_hat] = predict_labels(X_test_bag, test_raw)
 
 
-% Inputs:   X_test_bag     nx9995 bag of words features
+% Inputs:   X_test_bag     nx10000 bag of words features
 %           test_raw      nx1 cells containing all the raw tweets in text
 
 
