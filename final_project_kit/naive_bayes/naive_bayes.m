@@ -20,7 +20,7 @@ toc
 % Compute the predicted labels from training data. 
 % Y_fit = predict(nb_model, sparse_x); 
 
-% Compute the training error 
+% Compute the training error (loss) 
 general_loss = loss(nb_model, sparse_x, Y_train); 
 
 % Compute expected cost from model 
