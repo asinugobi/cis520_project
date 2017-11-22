@@ -18,14 +18,9 @@ nb_model = fitcnb(sparse_x,Y_train, 'Distribution', 'mn');
 toc 
 
 % Compute the predicted labels from training data. 
-Y_fit = predict(nb_model, sparse_x); 
+% Y_fit = predict(nb_model, sparse_x); 
 
 % Compute the training error 
-misses = Y_fit - Y_train; 
-misses = length(find(misses));
-
-error_train = misses/n * 100;
-
 general_loss = loss(nb_model, sparse_x, Y_train); 
 
 % Compute expected cost from model 
