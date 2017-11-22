@@ -3,7 +3,7 @@ clear
 clc 
 
 % Load data 
-load('../main/train.mat')
+load('../train.mat')
 [n, m] = size(X_train_bag); 
 
 %% Preprocess the data. 
@@ -12,8 +12,13 @@ sparse_x = full(X_train_bag);
 sparse_x(sparse_x > 1) = 1;
 
 % Filter the features 
-% freq = sum(sparse_x); 
-% length(sparse_x(freq >=10 & freq <= 750))
+freq = sum(sparse_x); 
+sparse_x = sparse_x(:, freq <= 750); 
+new_feature_size = size(sparse_x); 
+
+% Grab prior probabilities 
+% table = tabulate(Y_train); 
+% prior = (table(:,3)/100)';
 
 %% Train the tree model.
 % Train across Naive Bayes model. 
