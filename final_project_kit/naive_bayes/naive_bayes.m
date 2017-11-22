@@ -11,15 +11,6 @@ load('../train.mat')
 sparse_x = full(X_train_bag); 
 sparse_x(sparse_x > 1) = 1;
 
-% Filter the features 
-freq = sum(sparse_x); 
-sparse_x = sparse_x(:, freq <= 750); 
-new_feature_size = size(sparse_x); 
-
-% Grab prior probabilities 
-% table = tabulate(Y_train); 
-% prior = (table(:,3)/100)';
-
 %% Train the tree model.
 % Train across Naive Bayes model. 
 tic 
@@ -34,6 +25,8 @@ misses = Y_fit - Y_train;
 misses = length(find(misses));
 
 error_train = misses/n * 100;
+
+general_loss = loss(nb_model, sparse_x, Y_train); 
 
 % Compute expected cost from model 
 cost = performance_measure(Y_fit, Y_train);
