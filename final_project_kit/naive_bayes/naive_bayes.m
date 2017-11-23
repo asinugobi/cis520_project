@@ -23,6 +23,9 @@ toc
 % Compute the training error (loss) 
 general_loss = loss(nb_model, sparse_x, Y_train); 
 
+% Generate predictions 
+Y_fit = predict_labels(X_train_bag, train_raw);
+
 % Compute expected cost from model 
 cost = performance_measure(Y_fit, Y_train);
 
