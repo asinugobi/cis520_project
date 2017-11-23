@@ -3,7 +3,7 @@ clear
 clc 
 
 % Load data 
-load('../train.mat')
+load('train.mat')
 [n, m] = size(X_train_bag); 
 
 %% Preprocess the data. 
