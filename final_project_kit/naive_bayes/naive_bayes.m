@@ -10,12 +10,6 @@ load('train.mat')
 % Convert X_train_bag into feature matrix (sparse x)
 sparse_x = full(X_train_bag); 
 
-% % Grab emojis 
-% emoji_matrix = get_emojis(sparse_x);
-
-% % Add additional emoji counts to feature matrix 
-% sparse_x(:, m+1:m+size(emoji_matrix, 2)) = emoji_matrix; 
-
 % Convert sparse matrix to binary features
 sparse_x(sparse_x > 1) = 1;
 

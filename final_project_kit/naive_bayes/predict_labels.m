@@ -12,7 +12,7 @@ sparse_x(sparse_x > 1) = 1;
 % Outputs:  Y_hat nx1 predicted labels (1 for joy, 2 for sadness, 3 for surprise, 4 for anger, 5 for fear)
 [Y_hat_model, posterior, costs_model] = predict(nb_model, sparse_x);  
 
-costs = [0 3 1 2 3; 4 0 2 3 2; 1 2 0 2 2; 2 1 2 0 2; 2 2 2 1 0];
+costs = [0 3 1 2 3; 4 0 2 3 2; 1 2 0 2 1; 2 1 2 0 2; 2 2 2 1 0];
 predictVals = [];
 Y_hat = [];
 
