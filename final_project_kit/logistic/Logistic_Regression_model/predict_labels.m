@@ -6,13 +6,12 @@ function [Y_hat] = predict_labels(X_test_bag, test_raw)
 
 % Outputs:  Y_hat           nx1 predicted labels (1 for joy, 2 for sadness, 3 for surprise, 4 for anger, 5 for fear)
 
+%% Preprocess the data. 
 load('logistic_regression.mat')
-load('Y_train.mat')
+Y_test = zeros(size(X_test_bag, 1), 1); 
 
-
-[predicted_label, accuracy, prob_estimates]= predict(Y_train, X_train_bag, logistic_model, ['-b 1', '-q', 'col']);
+[predicted_label, accuracy, prob_estimates]= predict(Y_test, X_test_bag, logistic_model, '-b 1 -q col');
 Y_hat= predicted_label; 
-
 % 
 % costs = [0 3 1 2 3; 4 0 2 3 2; 1 2 0 2 1; 2 1 2 0 2; 2 2 2 1 0];
 % predictVals=[];
