@@ -13,7 +13,7 @@ sparse_x = full(X_train_bag);
 % Convert sparse matrix to binary features
 sparse_x(sparse_x > 1) = 1;
 
-%% Train the tree model.
+%% Train the model.
 % Train across Naive Bayes model. 
 tic 
 nb_model = fitcnb(sparse_x,Y_train, 'Distribution', 'mn'); 
