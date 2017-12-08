@@ -9,10 +9,6 @@ load('naive_bayes.mat')
 sparse_x = full(X_test_bag); 
 sparse_x(sparse_x > 1) = 1;
 
-% remove_features = [136 79]; 
-% 
-% sparse_x(:, remove_features) = [];  
-
 % Outputs:  Y_hat nx1 predicted labels (1 for joy, 2 for sadness, 3 for surprise, 4 for anger, 5 for fear)
 [Y_hat_model, posterior, costs_model] = predict(nb_model, sparse_x);  
 
