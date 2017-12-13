@@ -15,15 +15,15 @@ sparse_x(sparse_x > 1) = 1;
 costs = [0 3 1 2 3; 4 0 2 3 2; 1 2 0 2 1; 2 1 2 0 2; 2 2 2 1 0];
 predictVals = [];
 Y_hat = [];
+% Y_hat = Y_hat_model; 
 
-% Cost sensitive multi-class loss 
+Cost sensitive multi-class loss 
 for k = 1:length(posterior)
     sample = posterior(k, :)';
     for c = 1:size(costs,2)
         predictVals(c)= sample(1)*costs(1, c) + sample(2)*costs(2,c) + sample(3)*costs(3,c) + sample(4)*costs(4,c) + sample(5)* costs(5,c);
     end
-   Y_hat(k,1) = find(predictVals == min(predictVals));
-            
+   Y_hat(k,1) = find(predictVals == min(predictVals));          
 end
 
 end

@@ -6,8 +6,7 @@ This directory contains the code used to generate our instance-based model for t
 
 ## About 
 
-k-NN is a non-parametric method used for classification and regression. In our case, we decided to use a k-NN classifier that would a tweet based on the k closest training examples in our 
-feature space. 
+k-NN is a non-parametric method used for classification and regression. In our case, we decided to use a k-NN classifier that would classify a tweet based on the k closest training examples in our feature space. 
 
 --- 
 
